@@ -1,4 +1,3 @@
-// src/linkedList.ts
 
 class Node<T> {
   public element: T;

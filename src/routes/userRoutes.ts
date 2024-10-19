@@ -1,4 +1,3 @@
-// src/userRoutes.ts
 
 import { Request, Response, Router } from "express";
 import User from "../models/User";
