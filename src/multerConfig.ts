@@ -1,3 +1,7 @@
+//code of question number 4 and 6 are pretty same 
+// so i implented both of them in this file 
+
+
 import multer from "multer";
 import { Request } from "express";
 
