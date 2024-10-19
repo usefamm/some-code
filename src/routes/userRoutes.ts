@@ -1,25 +1,25 @@
 // src/userRoutes.ts
 
-import { Request, Response, Router } from 'express';
-import User from '../models/User';
+import { Request, Response, Router } from "express";
+import User from "../models/User";
 
 const router = Router();
 
-router.get('/user/:id', async (req: Request, res: any): Promise<void> => {
-    try {
-        const user = await User.findById(req.params.id);
-        
-        // Check if user was found
-        if (!user) {
-            return res.status(404).json({ message: 'User not found' });
-        }
-        
-        // Respond with the user data
-        res.json(user);
-    } catch (error) {
-        console.error(error); // Log the error for debugging
-        res.status(500).json({ message: 'Internal Server Error' });
+router.get("/user/:id", async (req: Request, res: any): Promise<void> => {
+  try {
+    const user = await User.findById(req.params.id);
+
+    // Check if user was found
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
     }
+
+    // Respond with the user data
+    res.json(user);
+  } catch (error) {
+    console.error(error); // Log the error for debugging
+    res.status(500).json({ message: "Internal Server Error" });
+  }
 });
 
 export default router;
@@ -38,7 +38,7 @@ export default router;
 // }
 
 // // Async handler wrapper to catch errors
-// const asyncHandler = (fn: (req: Request, res: Response) => Promise<void>) => 
+// const asyncHandler = (fn: (req: Request, res: Response) => Promise<void>) =>
 //     (req: Request, res: Response): void => {
 //         fn(req, res).catch((error) => {
 //             if (error instanceof UserNotFoundError) {
@@ -65,4 +65,3 @@ export default router;
 // }));
 
 // export default router;
-
